@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Thunder Force V - Perfect System"
+id = "SLUS-00727"
+players = 1
+exe = "disc/SLUS_007.27"
+disc = "disc/Thunder Force V - Perfect System (USA).cue"
+discs = ["disc/Thunder Force V - Perfect System (USA).cue"]
+disc_serials = ["SLUS-00727"]
+load_address = "0x80010000"
+entry_pc = "0x80015DC0"
+text_size = "0x00090000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Thunder Force V - Perfect System (USA).bin"
+cue_name = "Thunder Force V - Perfect System (USA).cue"
+boot_exe = "SLUS_007.27"
+known_sizes = [594275136]
+known_md5 = [
+  "8bce4f9f7ca0d5e29f1df1fac1751bb4",
+]
+known_sha1 = [
+  "496b432b63277613412d835dca7b0150181f557a",
+]
+known_crc32 = [
+  "878f2211",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Thunder Force V - Perfect System Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "2038442cdb38b9a36bc946f9a0045deecd59bf781aaa2433b96da0aa6c656af8"

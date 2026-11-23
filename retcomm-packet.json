@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "thunder-force-v-perfect-system-psx",
+  "name": "Thunder Force V - Perfect System",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "thunder-force-v-perfect-system-recomp",
+  "rom_identity": {
+    "crc32": [
+      "878f2211"
+    ],
+    "md5": [
+      "8bce4f9f7ca0d5e29f1df1fac1751bb4"
+    ],
+    "sha1": [
+      "496b432b63277613412d835dca7b0150181f557a"
+    ],
+    "disc_serials": [
+      "SLUS-00727"
+    ],
+    "sizes": [
+      594275136
+    ],
+    "filenames": [
+      "Thunder Force V - Perfect System (USA).cue",
+      "Thunder Force V - Perfect System (USA).bin"
+    ],
+    "track_counts": [
+      1
+    ],
+    "disc_fps": [
+      "2038442cdb38b9a36bc946f9a0045deecd59bf781aaa2433b96da0aa6c656af8"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/thunder-force-v-perfect-system-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "thunder-force-v-perfect-system-*-windows-x64.zip",
+      "linux-x64": "thunder-force-v-perfect-system-*-linux-x64.zip",
+      "macos-arm64": "thunder-force-v-perfect-system-*-macos-arm64.zip",
+      "macos-x64": "thunder-force-v-perfect-system-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "thunder_force_v_perfect_system.exe",
+    "linux": "thunder_force_v_perfect_system",
+    "macos": "thunder_force_v_perfect_system"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/thunder-force-v-perfect-system-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
